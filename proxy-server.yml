@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: author
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/author/**
+        - id: book
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/book/**
